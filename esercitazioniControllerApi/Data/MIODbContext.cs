@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace esercitazioniControllerApi.Data
 {
-    public class DbContext : IdentityDbContext<IdentityUser>
+    public class MIODbContext : IdentityDbContext<IdentityUser>
     {
-
+        
         public List<Foto> Fotos { get; set; }
         public List<Like>? Likes { get; set; }
         public List<Commenti>? Commenti { get; set; }
@@ -15,7 +15,7 @@ namespace esercitazioniControllerApi.Data
         public List<Post> Posts { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-                optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=Foto;" +
+                optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=alten;" +
                 "Integrated Security=True;TrustServerCertificate=True");
         }
     }
